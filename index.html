@@ -11,46 +11,46 @@
             padding: 0;
             background-color: #F5F5DC;
         }
+
         header {
             background-color: #F5F5DC;
             color: #fff;
             padding: 20px;
             text-align: center;
+            position: relative;
         }
+
         .description {
             background-color: #444;
             color: #fff;
             padding: 20px;
             text-align: center;
         }
+
         .container {
             display: grid;
-            grid-template-columns: repeat(8, 180px); /* Each box will have a fixed width of 150px */
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 10px;
             padding: 20px;
-            justify-content: center;
-            align-items: center;
-            height: calc(100vh - 250px); /* Adjusted height to fill screen */
         }
+
         .box {
-            width: 180px; /* Fixed width for each box */
-            height: 250px; /* Fixed height for each box */
             background-color: #fff;
             border: 1px solid #ccc;
             text-align: center;
             padding: 20px;
             box-sizing: border-box;
         }
+
         .box img {
             max-width: 100%;
-            max-height: 100%;
-            width:auto;
-            height:auto;
+            height: auto;
         }
-            
+
         .box p {
             margin-top: 10px;
         }
+
         .top-right-message {
             position: absolute;
             top: 20px;
@@ -59,77 +59,100 @@
             color: #fff;
             padding: 10px 20px;
             border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header, .description, .top-right-message {
+                padding: 15px;
+                font-size: 0.9rem;
+            }
+
+            .top-right-message {
+                padding: 8px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header, .description, .top-right-message {
+                padding: 10px;
+                font-size: 0.8rem;
+            }
+
+            .top-right-message {
+                padding: 5px 10px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <a href="index.html">
-        <h1>TSW Layer Wizard</h1>
+            <h1>TSW Layer Wizard</h1>
         </a>
-         <div class="top-right-message">
+        <div class="top-right-message">
             Message of the Month: You are Valid!
         </div>
     </header>
     <div class="description">
-        <p>Welcome to the unofficial TSW layer wizard, select a route to find all it's available layers.</p>
+        <p>Welcome to the unofficial TSW layer wizard, select a route to find all its available layers.</p>
     </div>
     <div class="container">
-        <!-- Repeat this div 64 times for each box -->
+        <!-- Repeat this div for each box -->
         <div class="box">
-            <a href="page1.html"><img src="SPG.jpg"></a>
+            <a href="page1.html"><img src="SPG.jpg" alt="Sand Patch Grade"></a>
             <p>Sand Patch Grade</p>
         </div>
         <div class="box">
-            <a href="page2.html"><img src="GWE.jpeg"></a>
+            <a href="page2.html"><img src="GWE.jpeg" alt="Great Western Express"></a>
             <p>Great Western Express</p>
         </div>
         <div class="box">
-            <a href="page3.html"><img src="RT.jpeg"></a>
+            <a href="page3.html"><img src="RT.jpeg" alt="Rapid Transit"></a>
             <p>Rapid Transit</p>
         </div>
         <div class="box">
-            <a href="page4.html"><img src="WSR.jpg"></a>
+            <a href="page4.html"><img src="WSR.jpg" alt="West Somerset Railway"></a>
             <p>West Somerset Railway</p>
         </div>
         <div class="box">
-            <a href="page5.html"><img src="RSN.jpeg"></a>
+            <a href="page5.html"><img src="RSN.jpeg" alt="Ruhr Sieg Nord"></a>
             <p>Ruhr Sieg Nord</p>
         </div>
         <div class="box">
-            <a href="page6.html"><img src="LIRR.jpg"></a>
+            <a href="page6.html"><img src="LIRR.jpg" alt="Long Island Railroad V1"></a>
             <p>Long Island Railroad V1</p>
         </div>
         <div class="box">
-            <a href="page7.html"><img src="NTP.jpg"></a>
+            <a href="page7.html"><img src="NTP.jpg" alt="Northern Transpennine"></a>
             <p>Northern Transpennine</p>
         </div>
         <div class="box">
-            <a href="page8.html"><img src="MSB.jpg"></a>
+            <a href="page8.html"><img src="MSB.jpg" alt="Main Spessart Bahn"></a>
             <p>Main Spessart Bahn</p>
         </div>
         <div class="box">
-            <a href="page9.html"><img src="TVL.jpeg"></a>
+            <a href="page9.html"><img src="TVL.jpeg" alt="Tees Valley Line"></a>
             <p>Tees Valley Line</p>
         </div>
         <div class="box">
-            <a href="page10.html"><img src="SFJ.jpg"></a>
+            <a href="page10.html"><img src="SFJ.jpg" alt="Peninsula Corridor"></a>
             <p>Peninsula Corridor</p>
         </div>
         <div class="box">
-            <a href="page11.html"><img src="RRO.jpg"></a>
+            <a href="page11.html"><img src="RRO.jpg" alt="Rhein Ruhr Osten"></a>
             <p>Rhein Ruhr Osten</p>
         </div>
         <div class="box">
-            <a href="page12.html"><img src="ECW.jpg"></a>
+            <a href="page12.html"><img src="ECW.jpg" alt="East Coastway"></a>
             <p>East Coastway</p>
         </div>
         <div class="box">
-            <a href="page13.html"><img src="OSD.jpg"></a>
+            <a href="page13.html"><img src="OSD.jpg" alt="Oakville Subdivision"></a>
             <p>Oakville Subdivision</p>
         </div>
         <div class="box">
-            <a href="page14.html"><img src="HRR.jpeg"></a>
+            <a href="page14.html"><img src="HRR.jpeg" alt="Hauptstrecke Rhein Ruhr"></a>
             <p>Hauptstrecke Rhein Ruhr</p>
         </div>
         <div class="box">
