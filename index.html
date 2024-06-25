@@ -81,6 +81,82 @@
             .top-right-message {
                 padding: 5px 10px;
             }
+             /* Dark mode styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        header.dark-mode {
+            background-color: #1f1f1f;
+            color: #ffffff;
+        }
+
+        .description.dark-mode {
+            background-color: #333;
+            color: #ffffff;
+        }
+
+        .box.dark-mode {
+            background-color: #1f1f1f;
+            border: 1px solid #444;
+        }
+
+        /* Toggle switch */
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .toggle-label {
+            margin-right: 10px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
         }
     </style>
 </head>
@@ -89,6 +165,12 @@
         <a href="index.html">
             <h1>TSW Layer Wizard</h1>
         </a>
+        <div class="toggle-container">
+        <span class="toggle-label">Dark Mode:</span>
+        <label class="toggle-switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+        </label>
         <div class="top-right-message">
             Message of the Month: You are Valid!
         </div>
@@ -334,5 +416,36 @@
             <a href="page59.html"><img src="LIRR2.png"></a>
             <p>Long Island Railroad V2</p>
         </div>
+        <script>
+        const toggleSwitch = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.body.classList.add(currentTheme);
+            document.querySelectorAll('header, .description, .box').forEach(element => {
+                element.classList.add(currentTheme);
+            });
+            if (currentTheme === 'dark-mode') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        toggleSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add('dark-mode');
+                document.querySelectorAll('header, .description, .box').forEach(element => {
+                    element.classList.add('dark-mode');
+                });
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+                document.querySelectorAll('header, .description, .box').forEach(element => {
+                    element.classList.remove('dark-mode');
+                });
+                localStorage.setItem('theme', 'light-mode');
+            }
+        });
+    </script>
 </body>
+    
 </html>
